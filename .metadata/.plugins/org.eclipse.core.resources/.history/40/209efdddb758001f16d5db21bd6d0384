@@ -1,0 +1,31 @@
+package in.ashokit.services;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import in.ashokit.entity.Employee;
+import in.ashokit.repo.EmployeeRepository;
+
+@Service
+public class EmpServices {
+	
+	private EmployeeRepository empRepo;
+
+	public EmpServices(EmployeeRepository empRepo) {
+		this.empRepo = empRepo;
+	}
+	
+	public void m1(Employee e) {
+		Employee employee = empRepo.save(e);
+		System.out.println(employee);
+	}
+	
+	public void m2() {
+		List<Employee> all = empRepo.findAll();
+		all.forEach(System.out::println);
+	}
+	
+	
+
+}

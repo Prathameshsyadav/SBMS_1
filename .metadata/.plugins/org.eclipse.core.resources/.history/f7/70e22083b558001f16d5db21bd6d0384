@@ -1,0 +1,17 @@
+package in.ashokit;
+
+import in.ashokit.repo.EmployeeRepository;
+
+public class EmpServices {
+	
+	private EmployeeRepository empRepo;
+
+	public EmpServices(EmployeeRepository empRepo) {
+		this.empRepo = empRepo;
+	}
+	
+	
+	
+	
+
+}

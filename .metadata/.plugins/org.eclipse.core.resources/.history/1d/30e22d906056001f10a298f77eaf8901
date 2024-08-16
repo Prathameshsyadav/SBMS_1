@@ -1,0 +1,22 @@
+package in.ashokit;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import in.ashokit.repo.StuRepo;
+
+@SpringBootApplication
+public class SpringDataJpa1Application {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context
+		= SpringApplication.run(SpringDataJpa1Application.class, args);
+		
+		StuRepo bean = context.getBean(StuRepo.class);
+		System.out.println(bean);
+		
+		
+	}
+
+}

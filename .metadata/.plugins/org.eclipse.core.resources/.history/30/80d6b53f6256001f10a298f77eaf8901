@@ -1,0 +1,56 @@
+package in.ashokit;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import in.ashokit.entity.Student;
+import in.ashokit.repo.StuRepo;
+
+@SpringBootApplication
+public class SpringDataJpa1Application {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context
+		= SpringApplication.run(SpringDataJpa1Application.class, args);
+		
+		StuRepo bean = context.getBean(StuRepo.class);
+		System.out.println(bean);
+		
+		Student s = new Student();
+		s.setSid(2);
+		s.setSname("Ashok");
+		s.setSrollNo(85);
+		s.setAddress("HYDERABAD");
+		
+		Student s1 = new Student();
+		s.setSid(3);
+		s.setSname("Prabhu");
+		s.setSrollNo(58);
+		s.setAddress("BANGLORE");
+		
+		Student s2 = new Student();
+		s.setSid(4);
+		s.setSname("Baba");
+		s.setSrollNo(47);
+		s.setAddress("KOCHI");
+		
+		List<Student> l = new ArrayList<Student>();
+		
+		l.add(s);
+		l.add(s1);
+		l.add(s2);
+		
+		Iterable<Student> saveAll = bean.saveAll(l);
+		
+		
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,32 @@
+package in.ashokit;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import in.ashokit.entity.Student;
+import in.ashokit.repo.StuRepo;
+
+@SpringBootApplication
+public class SpringDataJpa1Application {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context
+		= SpringApplication.run(SpringDataJpa1Application.class, args);
+		
+		StuRepo bean = context.getBean(StuRepo.class);
+		System.out.println(bean);
+		
+		Student s = new Student();
+		s.setSid(1);
+		s.setSname("Prathamesh");
+		s.setSrollNo(84);
+		s.setAddress("MUMBAI");
+		
+		bean.save(s);
+		
+		
+		
+	}
+
+}

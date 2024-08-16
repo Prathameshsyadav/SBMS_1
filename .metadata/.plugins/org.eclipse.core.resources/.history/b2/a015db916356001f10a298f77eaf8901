@@ -1,0 +1,47 @@
+package in.ashokit.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class Student {
+	
+	@Id
+	Integer sid;
+	String  sname;
+	Integer srollNo;
+	String address;
+	
+	public Integer getSid() {
+		return sid;
+	}
+	public void setSid(Integer sid) {
+		this.sid = sid;
+	}
+	public String getSname() {
+		return sname;
+	}
+	public void setSname(String sname) {
+		this.sname = sname;
+	}
+	public Integer getSrollNo() {
+		return srollNo;
+	}
+	public void setSrollNo(Integer srollNo) {
+		this.srollNo = srollNo;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	@Override
+	public String toString() {
+		return "Student [sid=" + sid + ", sname=" + sname + ", srollNo=" + srollNo + ", address=" + address + "]";
+	}
+	
+	
+	
+
+}

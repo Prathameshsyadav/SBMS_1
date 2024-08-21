@@ -1,6 +1,7 @@
 package in.ashokit.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,12 @@ public class EmployeeService implements EmpService {
 		empRepo.save(e);
 		return e.getId()!=null;
 	}
+	
+	public Employee getEmployee(Integer id) {
+		Optional<Employee> byId = empRepo.findById(id);
+		return byId.get();
+	}
+	
 
 	@Override
 	public List<Employee> getEmployees() {

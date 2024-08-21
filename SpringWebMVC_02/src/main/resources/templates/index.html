@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>
+			Ashok IT
+		</title>
+	</head>
+	<body>
+		<h1>Welcome to Ashok IT</h1>
+		<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>ADDRESS</th>
+				<th>NAME</th>
+				<th>SALARY</th>
+				<th>GENDER</th>
+			</tr>
+			<link rel="stylesheet" href="/css/style.css"> 	
+		</thead>
+		<tbody>
+			<tr th:each="employee : ${emp}">
+			            <td th:text="${employee.id}"></td>
+			            <td th:text="${employee.address}"></td>
+			            <td th:text="${employee.name}"></td>
+						<td th:text="${employee.salary}"></td>
+						<td th:text="${employee.gender}"></td>
+			        </tr>
+		</tbody>
+		</table>
+	</body>
+</html>

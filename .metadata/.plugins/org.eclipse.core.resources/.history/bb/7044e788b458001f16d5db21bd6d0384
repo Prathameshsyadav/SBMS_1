@@ -1,4 +1,0 @@
-spring.application.name=SpringDataJPARepo
-
-server.port=8082
-

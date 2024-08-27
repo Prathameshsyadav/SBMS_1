@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import in.ashokit.excpetion.ProductNotFoundException;
+
 @ControllerAdvice
 public class HandlingException {
 	
@@ -20,9 +22,17 @@ public class HandlingException {
 	}
 	
 	
-	@ExceptionHandler(ArithmeticException.class)
+	@ExceptionHandler(value = ArithmeticException.class)
 	public String arithmaticExceptionHandler(ArithmeticException e, Model m) {
 		m.addAttribute("msg","Opps!!!! Arithmatic exception... Something went wrong");
+		logger.error(e.getMessage());
+		return "error";
+	}
+	
+	
+	@ExceptionHandler(value = ProductNotFoundException.class)
+	public String productNotFoundHandler(ProductNotFoundException e, Model m) {
+		m.addAttribute("msg", "Opps!!!! Product not found Sorry ");
 		logger.error(e.getMessage());
 		return "error";
 	}

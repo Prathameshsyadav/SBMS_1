@@ -3,11 +3,13 @@ package in.ashokit.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import in.ashokit.entity.User;
 import in.ashokit.services.UserServices;
+import jakarta.validation.Valid;
 
 @Controller
 public class UserController {
@@ -18,21 +20,31 @@ public class UserController {
 	@GetMapping("/")
 	public String login(Model m) {
 		User user = new User();
-		user.setName("chinan");
 		m.addAttribute("user", user);
 		return "index";
 	}
 	
 	@PostMapping("/login")
-	public String saveUser(User user, Model model) {
-		Boolean saveUser = userService.saveUser(user);
-		if(saveUser) {
-			model.addAttribute("msg", "User Saved");			
+	public String saveUser(@Valid User user,BindingResult result, Model model) {
+		
+		if(result.hasErrors()) {
+			model.addAttribute("msg", "Validation Failed");
+			return "index";
 		}else {
-			model.addAttribute("msg", "User not saved");
+
+			Boolean saveUser = userService.saveUser(user);
+			if(saveUser) {
+				model.addAttribute("msg", "User Saved");			
+			}else {
+				model.addAttribute("msg", "User not saved");
+			}
+			
+			model.addAttribute("user", new User());
+			return "index";
 		}
-		return "index";
-	}
+		
+	}   
+	
 	
 	
 

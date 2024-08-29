@@ -7,7 +7,7 @@
 </head>
 
 <body>
-	<p th:text="${msg}"></p>
+	<p style="color: red;" th:text="${msg}"></p>
 	<form th:action="@{/login}" th:object="${user}" method="post">
 		<table>
 			<tr>
@@ -17,6 +17,7 @@
 				<td>
 					<input type="text" th:field="*{name}">
 				</td>
+				<td><p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" ></p> </td>
 			</tr>
 			<tr>
 				<td>
@@ -25,6 +26,7 @@
 				<td>
 					<input type="email" th:field="*{email}">
 				</td>
+				<td><p th:if="${#fields.hasErrors('email')}" th:errors="*{name}" ></p></td>
 			</tr>
 			<tr>
 				<td>
@@ -32,6 +34,7 @@
 				</td>
 				<td>
 					<input type="password" th:field="*{password}">
+					<td><p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p></td>
 				</td>
 			</tr>
 			<tr>
@@ -40,6 +43,7 @@
 				</td>
 				<td>
 					<input type="number" th:field="*{phNo}">
+					<td><p th:if="${#fields.hasErrors('phNo')}" th:errors="*{phNo}"></p></td>
 				</td>
 			</tr>
 			<tr>

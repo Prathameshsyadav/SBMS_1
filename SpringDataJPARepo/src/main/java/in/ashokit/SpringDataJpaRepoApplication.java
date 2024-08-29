@@ -24,7 +24,7 @@ public class SpringDataJpaRepoApplication {
 		
 	//-----------------------------------------------------
 		
-		//bean.m2();
+		bean.m2();
 		
 	//-----------------------------------------------------
 		
@@ -49,7 +49,7 @@ public class SpringDataJpaRepoApplication {
 		
 	//	bean.m8();
 		
-	//	bean.getByPage(2);
+		bean.getByPage(3);
 	/*	
 		Employee emp = new Employee();
 		emp.setAddress("Banglore");
@@ -68,7 +68,7 @@ public class SpringDataJpaRepoApplication {
 	//	bean.getByPage(2);
 		
 		Employee e = new Employee();
-		e.setAddress("Ambernath");
+		e.setAddress("Khadavli");
 		
 		
 		bean.QBE(e);

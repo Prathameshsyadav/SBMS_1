@@ -17,7 +17,7 @@ public class EmpServices {
 	
 	private EmployeeRepository empRepo;
 	
-	private static final int pageSize=4;
+	private static final int pageSize=3;
 
 	public EmpServices(EmployeeRepository empRepo) {
 		this.empRepo = empRepo;
@@ -76,12 +76,12 @@ public class EmpServices {
 		System.out.println(emp);
 	}
 	
-/*	public void getByPage(int pageNum) {
+	/*	public void getByPage(int pageNum) {
 		PageRequest page = PageRequest.of(pageNum-1,pageSize);
 		Page<Employee> emps = empRepo.findAll(page);
 		emps.get().forEach(System.out::println);
 	}
-	
+		
 	public void getEmpswithQBE(Employee e) {
 		Example<Employee> ex = Example.of(e);
 		List<Employee> all = empRepo.findAll(ex);

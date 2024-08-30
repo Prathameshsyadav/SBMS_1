@@ -10,6 +10,27 @@
 	<div class="container">
     <h1>Welcome to dashboard</h1>
 	
+	<p th:text="${msg}"></p>
+	
+	<form th:action="@{/addContact}" th:object="${contact}" method="post">
+				<table>
+					<tr>
+						<td>Contact Name : </td>
+						<td><input type="text" th:field="*{contactName}" required> </td>
+					</tr>
+					<tr>
+						<td>Contact Number : </td>
+						<td><input type="number" th:field="*{contactMob}" required> </td>
+					</tr>
+					
+					<tr>
+						<td><input type="submit" value="Add contact" class="btn btn-primary"> </td>
+					</tr>
+				</table>
+			</form>
+			
+			<a th:href="@{/viewcontact}" class="btn btn-primary">View Contact</a>
+	
 	<a th:href="@{/logout}" class="btn btn-danger">Logout</a>
 	
 	</div>

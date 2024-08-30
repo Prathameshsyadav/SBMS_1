@@ -1,5 +1,7 @@
 package in.ashokit.services;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,21 +15,24 @@ public class UserServiceImpl implements UserService {
 	private UserRepo userRepo;
 
 	@Override
-	public Boolean saveUser(User user) {
+	public User saveUser(User user) {
 		User u = userRepo.save(user);
-		return u.getId()!=null;
+		return u;
 	}
 
 	@Override
-	public Boolean loginUser(String email, String password) {
+	public User loginUser(String email, String password) {
 		User user = userRepo.findByEmail(email);
 		//System.out.println(user);
 		if(user.getPassword().equals(password)) {
-			return true;
+			return user;
 		}else {
-			return false;
+			return null;
 		}
 	}
+	
+
+	
 	
 	
 

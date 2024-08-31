@@ -28,10 +28,16 @@ public class ContactController {
 	    }
 
 	    @PostMapping("/addContact")
-	    public String addContact(@ModelAttribute Contact contact, HttpSession session) {
+	    public String addContact(@ModelAttribute Contact contact, HttpSession session, Model m) {
 	        User user = (User) session.getAttribute("user");
 	        //System.out.println(user);
-	        contactService.addContact(contact, user);
+	        Boolean contact2 = contactService.addContact(contact, user);
+	        if(contact2) {
+	        	m.addAttribute("msg", "Contact saved");
+	        }else {
+	        	m.addAttribute("emsg", "Please login first");
+	        	return "login";
+	        }
 	        return "dashboard";
 	    }
 
@@ -40,8 +46,14 @@ public class ContactController {
 	        User user = (User) session.getAttribute("user");
 	        System.out.println(user);
 	        List<Contact> contacts = contactService.getUserContact(user);
-	        model.addAttribute("contact", contacts);
-	        return "contactDetails";
+	        if(contacts != null) {
+	        	model.addAttribute("contact", contacts);
+		        return "contactDetails";
+	        }else {
+	        	model.addAttribute("emsg", "Please login first");
+	        	return "login";
+	        }
+	        
 	    }
 
 }

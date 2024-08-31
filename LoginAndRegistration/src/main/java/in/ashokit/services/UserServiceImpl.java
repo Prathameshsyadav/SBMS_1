@@ -24,11 +24,17 @@ public class UserServiceImpl implements UserService {
 	public User loginUser(String email, String password) {
 		User user = userRepo.findByEmail(email);
 		//System.out.println(user);
-		if(user.getPassword().equals(password)) {
-			return user;
+		
+		if(user != null) {
+			if(user.getPassword().equals(password)) {
+				return user;
+			}else {
+				return null;
+			}
 		}else {
 			return null;
 		}
+		
 	}
 	
 

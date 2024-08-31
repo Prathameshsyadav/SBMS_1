@@ -21,19 +21,31 @@ public class ContactServiceImpl implements ContactServices {
 
 	@Override
 	public List<Contact> getUserContact(User user) {
+		if(user != null) {
+			List<Contact> contacts = contactRepo.findByUser(user);
+			System.out.println(contacts);
+			return contacts;
+		}else
+			return null;
 		
-		List<Contact> contacts = contactRepo.findByUser(user);
-		System.out.println(contacts);
-		return contacts;
 	}
 
 	@Override
 	public Boolean addContact(Contact contact, User user) {
 		// TODO Auto-generated method stub
-		User managedUser = userRepository.findById(user.getId()).orElseThrow();
-        contact.setUser(managedUser);
-		 Contact save = contactRepo.save(contact);
-		 return save.getCid() != null;
+		if(user != null) {
+			User managedUser = userRepository.findById(user.getId()).orElseThrow();
+			if(managedUser != null) {
+				contact.setUser(managedUser);
+				 Contact save = contactRepo.save(contact);
+				 return save.getCid() != null;
+			}else {
+				return false;
+			}
+		}else 
+			return false;
+		
+        
 	}
 
 

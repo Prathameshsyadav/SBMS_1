@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-    <typeInfo handle="=LoginAndRegistration/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;in.ashokit.services{UserService.java[UserService" modifiers="513" timestamp="1724945193386"/>
+    <typeInfo handle="=LoginAndRegistration/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;in.ashokit.services{UserService.java[UserService" modifiers="513" timestamp="1725039801919"/>
     <typeInfo handle="=LoginAndRegistration/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;in.ashokit.services{ContactServices.java[ContactServices" modifiers="513" timestamp="1724988125007"/>
     <typeInfo handle="=LoginAndRegistration/C:\/Users\/Prathamesh\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/3.3.3\/spring-data-jpa-3.3.3.jar=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-jpa=/=/maven.version=/3.3.3=/=/maven.scope=/compile=/=/maven.pomderived=/true=/&lt;org.springframework.data.jpa.repository(JpaRepository.class[JpaRepository" modifiers="1537" timestamp="1724427138668"/>
 </typeInfoHistroy>

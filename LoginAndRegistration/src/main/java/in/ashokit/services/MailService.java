@@ -16,6 +16,8 @@ public class MailService {
 	@Autowired
 	UserRepo userRepo;
 	
+	 
+	
 	public boolean sendSimpleMail(String to, String subject, String body) {
 		User user = userRepo.findByEmail(to);
 		if(user != null) {
@@ -31,6 +33,9 @@ public class MailService {
 		}
 		
 	}
+	
+
+	
 	
 
 }

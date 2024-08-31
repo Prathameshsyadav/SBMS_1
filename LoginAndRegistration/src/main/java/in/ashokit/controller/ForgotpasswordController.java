@@ -34,8 +34,10 @@ public class ForgotpasswordController {
 		User user = userService.findByEmail(email);
 		session.setAttribute("user", user);
 		Boolean validateEmail = forgotpasswordService.validateEmail(email);
-		boolean sendSimpleMail = mailService.sendSimpleMail(email, "Simple mail service", "Your OTP is 123456");
-		if(validateEmail && sendSimpleMail) {
+		//int otp = ForgotPasswordServiceImpl.generateOtp();
+		
+		//boolean sendSimpleMail = mailService.sendSimpleMail(email, "Simple mail service", "Your OTP is "+otp);
+		if(validateEmail) {
 			return "otpPage";
 		} else {
 			m.addAttribute("msg", "Invalid Email");

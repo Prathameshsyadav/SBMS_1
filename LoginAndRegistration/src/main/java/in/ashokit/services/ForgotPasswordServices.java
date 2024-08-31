@@ -1,6 +1,7 @@
 package in.ashokit.services;
 
 import in.ashokit.entity.User;
+import jakarta.servlet.http.HttpSession;
 
 public interface ForgotPasswordServices {
 	

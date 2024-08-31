@@ -8,5 +8,7 @@ public interface UserService {
 	
 	public User loginUser(String email, String password);
 	
+	public User findByEmail(String email);
+	
 
 }

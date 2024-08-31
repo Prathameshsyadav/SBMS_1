@@ -30,7 +30,6 @@ public class ContactController {
 	    @PostMapping("/addContact")
 	    public String addContact(@ModelAttribute Contact contact, HttpSession session, Model m) {
 	        User user = (User) session.getAttribute("user");
-	        //System.out.println(user);
 	        Boolean contact2 = contactService.addContact(contact, user);
 	        if(contact2) {
 	        	m.addAttribute("msg", "Contact saved");
@@ -44,7 +43,6 @@ public class ContactController {
 	    @GetMapping("/viewcontact")
 	    public String viewContacts(Model model, HttpSession session) {
 	        User user = (User) session.getAttribute("user");
-	        System.out.println(user);
 	        List<Contact> contacts = contactService.getUserContact(user);
 	        if(contacts != null) {
 	        	model.addAttribute("contact", contacts);

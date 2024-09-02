@@ -41,7 +41,7 @@ public class User {
 	private LocalDate updatedDate;
 	
 	//@OneToMany(mappedBy = "user")
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+	@OneToMany( mappedBy = "user") // fetch = FetchType.EAGER
     private List<Contact> contacts;
 	
 	public Integer getId() {

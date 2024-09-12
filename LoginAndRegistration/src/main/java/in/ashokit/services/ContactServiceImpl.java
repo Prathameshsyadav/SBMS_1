@@ -34,16 +34,16 @@ public class ContactServiceImpl implements ContactServices {
 	public Boolean addContact(Contact contact, User user) {
 		// TODO Auto-generated method stub
 		if(user != null) {
-			User managedUser = userRepository.findById(user.getId()).orElseThrow();
-			if(managedUser != null) {
-				contact.setUser(managedUser);
+			//User managedUser = userRepository.findById(user.getId()).orElseThrow();
+			//if(managedUser != null) {
+				contact.setUser(user);
 				 Contact save = contactRepo.save(contact);
 				 return save.getCid() != null;
 			}else {
 				return false;
 			}
-		}else 
-			return false;
+	//	}else 
+			//return false;
 		
         
 	}

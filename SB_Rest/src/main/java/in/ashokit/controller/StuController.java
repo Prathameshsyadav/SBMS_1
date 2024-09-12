@@ -23,21 +23,24 @@ public class StuController {
 	@Autowired
 	private StuServices stuser;
 	
-	@GetMapping("/students")
+	@GetMapping(value = "/students", produces = {"application/json",
+													"application/xml"})
 	public ResponseEntity<List<Student>> getAllStudents(){
 		List<Student> allStudent = stuser.getAllStudent();
 		return new 
 				ResponseEntity<>(allStudent,HttpStatus.OK);
 	}
 	
-	@GetMapping("/student/{id}")
+	@GetMapping(value = "/student/{id}", produces = {"application/json",
+													  "application/xml"})
 	public ResponseEntity<Student> getStudent(@PathVariable("id") Integer id) {
 		Student studentById = stuser.getStudentById(id);
 		return new 
 				ResponseEntity<>(studentById,HttpStatus.OK);			
 	}
 	
-	@PostMapping("/student")
+	@PostMapping(value = "/student", produces = "text/plain", consumes={"application/json",
+																		"application/xml"})
 	public ResponseEntity<String> saveStudent(@RequestBody Student Student){
 		Boolean issaved = stuser.upsertStudent(Student);
 		if(issaved) {
@@ -47,7 +50,8 @@ public class StuController {
 		}
 	}
 	
-	@PutMapping("/student")
+	@PutMapping(value = "/student", produces = "text/plain", consumes={"application/json",
+																		"application/xml"})
 	public ResponseEntity<String> updateStudent(@RequestBody Student Student){
 		Boolean issaved = stuser.upsertStudent(Student);
 		if(issaved) {
@@ -57,7 +61,7 @@ public class StuController {
 		}
 	}
 	
-	@DeleteMapping("/student/{id}")
+	@DeleteMapping(value = "/student/{id}", produces = "text/plain")
 	public ResponseEntity<String> deleteStu(@PathVariable("id") Integer id) {
 		stuser.deleteStudent(id);
 		return new ResponseEntity<>("Student Deleted",HttpStatus.OK);			

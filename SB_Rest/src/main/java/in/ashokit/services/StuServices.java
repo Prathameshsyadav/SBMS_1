@@ -26,8 +26,14 @@ public class StuServices {
 		return stuRepo.findById(id).get();
 	}
 	
-	public void deleteStudent(Integer id) {
-		stuRepo.deleteById(id);
+	public String deleteStudent(Integer id) {
+		if(stuRepo.existsById(id)) {
+			stuRepo.deleteById(id);
+			return "Student got deleted";
+		}else {
+			return "Incorrect Id";
+		}
+		
 	}
 	
 

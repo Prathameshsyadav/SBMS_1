@@ -63,8 +63,8 @@ public class StuController {
 	
 	@DeleteMapping(value = "/student/{id}", produces = "text/plain")
 	public ResponseEntity<String> deleteStu(@PathVariable("id") Integer id) {
-		stuser.deleteStudent(id);
-		return new ResponseEntity<>("Student Deleted",HttpStatus.OK);			
+		String deleteStudent = stuser.deleteStudent(id);
+		return new ResponseEntity<>(deleteStudent,HttpStatus.OK);			
 	}
 	
 }

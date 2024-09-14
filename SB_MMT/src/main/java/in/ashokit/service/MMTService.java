@@ -29,9 +29,9 @@ public class MMTService {
 		return body;
 	}
 	
-	public TicketResponse getTicketByEmail(String email) {
+	public TicketResponse[] getTicketByEmail(String email) {
 		RestTemplate rt = new RestTemplate();
-		ResponseEntity<TicketResponse> forEntity = rt.getForEntity(GET_TICKET+email, TicketResponse.class);
+		ResponseEntity<TicketResponse[]> forEntity = rt.getForEntity(GET_TICKET+email, TicketResponse[].class);
 		return forEntity.getBody();
 	}
 	

@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ExceptionHandler"/>
-    <fullyQualifiedTypeName name="in.ashokit.excpetion.ProductNotFoundException"/>
-    <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
     <fullyQualifiedTypeName name="in.ashokit.service.UserService"/>
     <fullyQualifiedTypeName name="org.hibernate.annotations.GeneratorType"/>
     <fullyQualifiedTypeName name="jakarta.persistence.GenerationType"/>
@@ -43,21 +38,26 @@
     <fullyQualifiedTypeName name="in.ashokit.entity.User"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Query"/>
     <fullyQualifiedTypeName name="in.ashokit.services.UserService"/>
-    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
     <fullyQualifiedTypeName name="jakarta.transaction.Transactional"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Modifying"/>
     <fullyQualifiedTypeName name="in.ashokit.services.ForgotPasswordServiceImpl"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="in.ashokit.services.MailService"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.ObjectMapper"/>
     <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="in.ashokit.entity.Student"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
-    <fullyQualifiedTypeName name="org.springframework.web.client.RestTemplate"/>
     <fullyQualifiedTypeName name="in.ashokit.service.MsgService"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="in.ashokit.TickeRequest"/>
+    <fullyQualifiedTypeName name="org.springframework.web.client.RestTemplate"/>
+    <fullyQualifiedTypeName name="in.ashokit.response.TicketResponse"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+    <fullyQualifiedTypeName name="in.ashokit.service.MMTService"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
+    <fullyQualifiedTypeName name="in.ashokit.request.TickeRequest"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
 </qualifiedTypeNameHistroy>

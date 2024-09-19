@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: Student-Service
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/office
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  boot:
+    admin:
+      client:
+        url: http://localhost:1111/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+server:
+  port: 9092

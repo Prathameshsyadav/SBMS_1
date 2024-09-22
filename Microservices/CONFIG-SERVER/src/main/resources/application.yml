@@ -1,10 +1,13 @@
 spring:
-  application:
-    name: CONFIG-SERVER	
   cloud:
     config:
       server:
         git:
-          uri: https://github.com/Prathameshsyadav/SBMS_1/blob/main
+          uri: https://github.com/Prathameshsyadav/SBMS_1.git
+          search-paths: Microservices/application-properties
+
+  application:
+    name: CONFIG-SERVER
 server:
   port: 9093		
+

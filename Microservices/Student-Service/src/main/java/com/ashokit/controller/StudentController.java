@@ -25,6 +25,11 @@ public class StudentController {
 	
 	@PostMapping("/saveStu")
 	public ResponseEntity<Boolean> saveStudent(@RequestBody Student student){
+		
+		List<Address> addresses = student.getAddresses();
+		
+		boolean saveAddress = addressApiClient.saveAddress(addresses);
+	
 		boolean student2 = stuService.addStudent(student);
 		return new ResponseEntity<Boolean>(student2, HttpStatus.CREATED);
 	}

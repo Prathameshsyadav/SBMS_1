@@ -14,9 +14,9 @@ public class AddressServiceImpl implements AddressServices {
 	private AddressRepo addressRepo;
 
 	@Override
-	public boolean addAddress(Address address) {
-		Address save = addressRepo.save(address);
-		return save.getId() != null;
+	public boolean addAddress(List<Address> address) {
+		List<Address> save = addressRepo.saveAll(address);
+		return save.isEmpty();
 		
 	}
 

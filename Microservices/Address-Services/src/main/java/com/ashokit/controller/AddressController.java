@@ -21,7 +21,7 @@ public class AddressController {
 	private AddressServices addService;
 	
 	@PostMapping("/save")
-	public ResponseEntity<Boolean> saveAddress(@RequestBody Address address){
+	public ResponseEntity<Boolean> saveAddress(@RequestBody List<Address> address){
 		boolean address2 = addService.addAddress(address);
 		return new ResponseEntity<Boolean>(address2,HttpStatus.CREATED);
 	}

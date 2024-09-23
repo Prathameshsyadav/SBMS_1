@@ -35,6 +35,11 @@ public class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", addresses=" + addresses + "]";
+	}
+	
 	
 	
 	

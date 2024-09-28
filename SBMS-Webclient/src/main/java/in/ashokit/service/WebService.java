@@ -1,5 +1,7 @@
 package in.ashokit.service;
 
+import java.time.Duration;
+
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -39,7 +41,7 @@ public class WebService {
 	public void getStream() {
 		WebClient client = WebClient.create();
 
-		Disposable subscribe = client.get().uri(WebService.STREAM).retrieve().bodyToFlux(String.class).take(20)
+		Disposable subscribe = client.get().uri(WebService.STREAM).retrieve().bodyToFlux(String.class).take(8).delayElements(Duration.ofSeconds(2))
 				.subscribe(c -> System.out.println(c));
 
 	}

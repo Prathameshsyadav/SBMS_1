@@ -11,6 +11,8 @@ public class WebService {
 
 	public static final String URL = "http://classes.ashokit.in:8084/tickets";
 
+	public static final String STREAM = "https://stream.wikimedia.org/v2/stream/recentchange";
+
 	// SYNC
 	public void getQuote1() {
 
@@ -19,8 +21,8 @@ public class WebService {
 		String block = bodyToMono.block();
 		System.out.println(block);
 	}
-	
-	//Async
+
+	// Async
 	public void getQuote2() {
 
 		WebClient webClient = WebClient.create();
@@ -31,6 +33,14 @@ public class WebService {
 				.subscribe(response -> System.out.println(response));
 
 		System.out.println("Method ended ==----------------------------ended----------------");
+
+	}
+
+	public void getStream() {
+		WebClient client = WebClient.create();
+
+		Disposable subscribe = client.get().uri(WebService.STREAM).retrieve().bodyToFlux(String.class).take(20)
+				.subscribe(c -> System.out.println(c));
 
 	}
 }

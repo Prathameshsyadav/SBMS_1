@@ -12,7 +12,8 @@ public class SbmsWebclientApplication {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext run = SpringApplication.run(SbmsWebclientApplication.class, args);
 		WebService bean = run.getBean(WebService.class);
-		bean.getQuote2();
+		//bean.getQuote2();
+		bean.getStream();
 	}
 
 }

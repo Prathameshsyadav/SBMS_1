@@ -1,16 +1,21 @@
 package in.ashokit.service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import in.ashokit.entity.Chocolate;
 import in.ashokit.entity.Passport;
+import in.ashokit.entity.People;
 import in.ashokit.entity.Student;
 import in.ashokit.entity.Subject;
 import in.ashokit.entity.User;
+import in.ashokit.repo.ChocolateRepo;
 import in.ashokit.repo.PassportRepo;
+import in.ashokit.repo.PeopleRepo;
 import in.ashokit.repo.StudentRepo;
 import in.ashokit.repo.SubjectRepo;
 import in.ashokit.repo.UserRepo;
@@ -25,6 +30,10 @@ public class UserandPassportService {
 	private StudentRepo sturepo;
 	@Autowired
 	private SubjectRepo subRepo;
+	@Autowired
+	private ChocolateRepo choco;
+	@Autowired
+	private PeopleRepo peop;
 	
 	public void setUser() {
 		User u = new User();
@@ -72,6 +81,42 @@ public class UserandPassportService {
 		
 
 	}
+	
+	public void setPeople() {
+	    People p = new People();
+	    p.setName("Rohit");
+
+	/*    People p2 = new People();
+	    p2.setName("Raj");
+
+	    People p3 = new People();
+	    p3.setName("Rohan");*/
+
+	    Chocolate c = new Chocolate();
+	    c.setName("Dairy Milk");
+
+	    Chocolate c2 = new Chocolate();
+	    c2.setName("5 star");
+
+	    Chocolate c3 = new Chocolate();
+	    c3.setName("Perk");
+
+	    Chocolate c4 = new Chocolate();
+	    c4.setName("Munch");
+
+	  
+	    // Now associate the Chocolates with People
+	    List<Chocolate> chocolates = Arrays.asList(c, c2, c3, c4);
+	    p.setChocolate(chocolates);
+	 
+
+	  
+
+	    // Persist the People entities
+	    peop.save(p);
+	  
+	}
+
 	
 
 }

@@ -14,7 +14,9 @@ public class AssociateMappingsApplication {
 		UserandPassportService bean = run.getBean(UserandPassportService.class);
 		//bean.setUser();
 		
-		bean.setStudent();
+		//bean.setStudent();
+		
+		bean.setPeople();
 	}
 
 }

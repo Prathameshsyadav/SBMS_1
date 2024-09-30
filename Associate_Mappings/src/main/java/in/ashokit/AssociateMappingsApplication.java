@@ -12,7 +12,9 @@ public class AssociateMappingsApplication {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext run = SpringApplication.run(AssociateMappingsApplication.class, args);
 		UserandPassportService bean = run.getBean(UserandPassportService.class);
-		bean.setUser();
+		//bean.setUser();
+		
+		bean.setStudent();
 	}
 
 }

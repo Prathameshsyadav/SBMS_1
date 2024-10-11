@@ -28,7 +28,7 @@ public class CustomerService implements UserDetailsService {
 		
 		Collection<GrantedAuthority> authorities = customer.getRole()
 		.stream()
-		.map(role -> new SimpleGrantedAuthority(role))
+		.map(role -> new SimpleGrantedAuthority("ROLE_"+role))
 		.collect(Collectors.toList());
 		
 		return new User(customer.getEmail(), customer.getPassword(),authorities );

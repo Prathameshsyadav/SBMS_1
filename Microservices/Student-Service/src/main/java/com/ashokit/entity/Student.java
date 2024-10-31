@@ -15,6 +15,7 @@ public class Student {
 	private Integer id;
 	private String name;
 	@Transient
+	
 	private List<Address> addresses;
 	
 	public List<Address> getAddresses() {

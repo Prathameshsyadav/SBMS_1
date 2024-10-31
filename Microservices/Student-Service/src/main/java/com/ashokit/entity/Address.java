@@ -1,7 +1,5 @@
 package com.ashokit.entity;
 
-import jakarta.persistence.ManyToOne;
-
 public class Address {
 	
 	Integer id;
